@@ -1,0 +1,4 @@
+const HTTP_BACKEND_URL = import.meta.env.VITE_HTTP_BACKEND_URL;
+const WS_BACKEND_URL = import.meta.env.VITE_WS_BACKEND_URL;
+
+export { HTTP_BACKEND_URL, WS_BACKEND_URL };

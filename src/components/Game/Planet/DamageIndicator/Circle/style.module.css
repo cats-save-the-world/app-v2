@@ -1,0 +1,26 @@
+.svg {
+  transform: rotate(-90deg);
+}
+
+.circle {
+  fill: transparent;
+  stroke: rgba(255, 0, 0, 0.5);
+  transition-duration: 150ms;
+  transform-origin: center;
+}
+
+.blinking {
+  animation: blink 0.2s linear 6 alternate;
+}
+
+@keyframes blink {
+  from {
+    stroke: rgba(255, 0, 0, 0.5);
+    transform: scale(1);
+  }
+
+  to {
+    stroke: rgba(255, 0, 0, 1);
+    transform: scale(1.1);
+  }
+}

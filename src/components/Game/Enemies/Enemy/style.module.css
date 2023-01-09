@@ -1,0 +1,9 @@
+.enemy {
+  height: 20px;
+  width: 20px;
+  background-size: 30px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: url("./background.png");
+  transform: rotate(90deg);
+}

@@ -1,0 +1,21 @@
+.button {
+  grid-column: span 1 / span 1;
+  background-color: rgba(255, 255, 255, 0.1);
+  background-image: url("./arrow.png");
+  background-size: 50px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.left {
+  transform: rotate(180deg);
+}
+
+.button:active {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.button.left:active {
+  transform: rotate(180deg) scale(1.05);
+}
