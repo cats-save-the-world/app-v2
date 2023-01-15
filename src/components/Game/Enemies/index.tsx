@@ -11,8 +11,13 @@ const Enemies: FC = () => {
 
   return (
     <>
-      {enemies.map((enemy) => (
-        <Enemy key={enemy.id} angle={enemy.angle} distance={enemy.distance} />
+      {enemies.map((enemy: IEnemy) => (
+        <Enemy
+          key={enemy.id}
+          angle={enemy.angle}
+          distance={enemy.distance}
+          type={enemy.type}
+        />
       ))}
     </>
   );
