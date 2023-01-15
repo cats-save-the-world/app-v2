@@ -1,9 +1,41 @@
 .enemy {
   height: 20px;
   width: 20px;
-  background-size: 30px;
-  background-position: center;
+  position: relative;
+}
+
+.enemy::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 50%) rotate(90deg);
   background-repeat: no-repeat;
-  background-image: url("./background.png");
-  transform: rotate(90deg);
+  background-position: center;
+  width: 80px;
+  height: 80px;
+}
+
+.simple::before,
+.light::before,
+.twisted::before {
+  bottom: 30%;
+  background-size: 40px;
+}
+
+.simple::before {
+  background-image: url("./assets/red.png");
+}
+
+.light::before {
+  background-image: url("./assets/lightblue.png");
+}
+
+.twisted::before {
+  background-image: url("./assets/purple.png");
+}
+
+.heavy::before {
+  bottom: 40%;
+  background-image: url("./assets/red.png");
+  background-size: 70px;
 }
