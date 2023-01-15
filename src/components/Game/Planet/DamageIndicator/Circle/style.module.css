@@ -5,7 +5,7 @@
 .circle {
   fill: transparent;
   stroke: rgba(255, 0, 0, 0.5);
-  transition-duration: 150ms;
+  transition-duration: 300ms;
   transform-origin: center;
 }
 

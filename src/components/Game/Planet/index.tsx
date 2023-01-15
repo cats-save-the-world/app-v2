@@ -10,9 +10,7 @@ const Planet: FC = () => {
 
   return (
     <div className={style.planet}>
-      {planet.damage > 0 && (
-        <DamageIndicator value={planet.damage} prevValue={planet.prevDamage} />
-      )}
+      <DamageIndicator value={planet.damage} prevValue={planet.prevDamage} />
     </div>
   );
 };
