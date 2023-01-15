@@ -9,6 +9,8 @@ interface IProps {
 
 const Controls: FC<IProps> = ({ websocket }) => {
   const sendWebsocketEvent = (controlAction: ControlActionEnum) => {
+    if (websocket.readyState !== WebSocket.OPEN) return;
+
     const payload = { type: GameEventTypes.CONTROL, payload: controlAction };
     websocket.send(JSON.stringify(payload));
   };
@@ -37,6 +39,8 @@ const Controls: FC<IProps> = ({ websocket }) => {
   };
 
   useEffect(() => {
+    if (!window) return;
+
     window.addEventListener("keydown", handleKeyDown);
     window.addEventListener("keyup", handleStop);
 
@@ -44,7 +48,7 @@ const Controls: FC<IProps> = ({ websocket }) => {
       window.removeEventListener("keydown", handleKeyDown);
       window.removeEventListener("keyup", handleStop);
     };
-  }, []);
+  }, [window]);
 
   return (
     <div className="fixed pb-4 px-4 h-[140px] bottom-0 left-0 right-0 grid grid-cols-2 gap-4">
