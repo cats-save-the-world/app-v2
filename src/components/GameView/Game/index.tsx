@@ -1,13 +1,13 @@
 import { FC, useEffect, useState } from "react";
-import { initWebsocket } from "./helpers";
+import { initWebsocket } from "./utils";
 import Controls from "./Controls";
 import Planet from "./Planet";
 import Cat from "./Cat";
 import Enemies from "./Enemies";
 import { useDispatch } from "react-redux";
-import { setCat } from "../../store/cat";
-import { setEnemies } from "../../store/enemies";
-import { setPlanet } from "../../store/planet";
+import { setCat } from "../../../store/cat";
+import { setEnemies } from "../../../store/enemies";
+import { setPlanet } from "../../../store/planet";
 
 interface IProps {
   gameId: string;

@@ -2,7 +2,7 @@ import { FC } from "react";
 import style from "./style.module.css";
 
 interface IProps {
-  children: JSX.Element | boolean;
+  children: JSX.Element | JSX.Element[] | boolean;
 }
 
 const Layout: FC<IProps> = ({ children }) => {
