@@ -4,10 +4,12 @@ import Controls from "./Controls";
 import Planet from "./Planet";
 import Cat from "./Cat";
 import Enemies from "./Enemies";
-import { useDispatch } from "react-redux";
-import { setCat } from "../../store/cat";
-import { setEnemies } from "../../store/enemies";
-import { setPlanet } from "../../store/planet";
+import { useDispatch, useSelector } from "react-redux";
+import { setCat } from "../../../store/cat";
+import { setEnemies } from "../../../store/enemies";
+import { setPlanet } from "../../../store/planet";
+import { GameEventTypes } from "./types";
+import { StateType } from "../../../store/types";
 
 interface IProps {
   gameId: string;
@@ -16,14 +18,18 @@ interface IProps {
 const Game: FC<IProps> = ({ gameId }) => {
   const dispatch = useDispatch();
   const [websocket, setWebsocket] = useState<WebSocket | null>(null);
+  const credentials = useSelector((state: StateType) => state.auth.credentials);
 
   useEffect(() => {
-    setWebsocket(initWebsocket(gameId, handleEvent));
+    setWebsocket(initWebsocket(gameId, handleEvent, credentials));
   }, []);
 
   const handleEvent = (event: MessageEvent) => {
-    const { cat, enemies, planet } = JSON.parse(event.data);
+    const { type, payload } = JSON.parse(event.data);
 
+    if (type !== GameEventTypes.STATE) return;
+
+    const { cat, planet, enemies } = payload;
     dispatch(
       setCat({
         angle: cat.angle,
