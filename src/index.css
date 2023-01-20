@@ -2,10 +2,19 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .text-pixel {
+    text-shadow: 2px 6px #292929, 2px -2px #292929, -2px -2px #292929,
+      -2px 6px #292929;
+    @apply tracking-widest capitalize;
+  }
+}
+
 * {
   user-select: none;
 }
 
 body {
   background: #131d29;
+  font-family: "Press Start 2P", monospace;
 }

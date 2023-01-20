@@ -1,0 +1,4 @@
+.button:active {
+  transform: translateY(4px);
+  filter: brightness(70%);
+}
