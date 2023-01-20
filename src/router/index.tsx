@@ -1,9 +1,9 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createHashRouter } from "react-router-dom";
 import GameView from "../components/GameView";
 import IndexView from "../components/IndexView";
 import NewGameView from "../components/NewGameView";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <IndexView />,
