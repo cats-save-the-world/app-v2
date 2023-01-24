@@ -3,7 +3,7 @@ import { FC } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BottomSheetEnum, ICredentials } from "../../../store/auth/types";
 import { StateType } from "../../../store/types";
-import NewUserBottomSheet from "./NewUserBottomSheet";
+import WelcomeBottomSheet from "./WelcomeBottomSheet";
 import SignInBottomSheet from "./SignInBottomSheet";
 import UsernameBottomSheet from "./UsernameBottomSheet";
 import SignUpBottomSheet from "./SignUpBottomSheet";
@@ -24,7 +24,7 @@ const Auth: FC = () => {
           <UsernameBottomSheet key={BottomSheetEnum.USERNAME} />
         )}
         {bottomSheet === BottomSheetEnum.NEW_USER && (
-          <NewUserBottomSheet key={BottomSheetEnum.NEW_USER} />
+          <WelcomeBottomSheet key={BottomSheetEnum.NEW_USER} />
         )}
         {bottomSheet === BottomSheetEnum.SIGN_IN && (
           <SignInBottomSheet
