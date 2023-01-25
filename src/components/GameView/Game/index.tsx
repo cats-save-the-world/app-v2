@@ -1,8 +1,6 @@
 import { FC, useEffect, useState } from "react";
 import { initWebsocket } from "./helpers";
 import Controls from "./Controls";
-import Planet from "./Planet";
-import Cat from "./Cat";
 import Enemies from "./Enemies";
 import { useDispatch, useSelector } from "react-redux";
 import { setCat } from "../../../store/cat";
@@ -46,8 +44,6 @@ const Game: FC<IProps> = ({ gameId }) => {
   return (
     <>
       <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
-        <Planet />
-        <Cat />
         <Enemies />
       </div>
       <Controls websocket={websocket} />
