@@ -18,3 +18,12 @@
     background-position: 2000px;
   }
 }
+
+.wrapper {
+  transform: translate(200px, 500px) scale(3) rotate(-30deg);
+  transition: transform 2s;
+}
+
+.inGame {
+  transform: none;
+}
