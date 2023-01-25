@@ -3,7 +3,6 @@ import Game from "./Game";
 
 const GameView = () => {
   const params = useParams();
-
   return params.gameId ? <Game gameId={params.gameId} /> : null;
 };
 
