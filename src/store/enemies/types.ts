@@ -3,6 +3,8 @@ export interface IEnemy {
   angle: number;
   distance: number;
   type: "simple" | "heavy" | "light" | "twisted";
+  score: number;
+  alive: boolean;
 }
 
 export interface IState {
