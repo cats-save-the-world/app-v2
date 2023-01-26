@@ -1,13 +1,14 @@
 import { FC, useEffect, useState } from "react";
-import { initWebsocket } from "./helpers";
-import Controls from "./Controls";
-import Enemies from "./Enemies";
 import { useDispatch, useSelector } from "react-redux";
 import { setCat } from "../../../store/cat";
 import { setEnemies } from "../../../store/enemies";
 import { setPlanet } from "../../../store/planet";
-import { GameEventTypes } from "./types";
 import { StateType } from "../../../store/types";
+import Controls from "./Controls";
+import Enemies from "./Enemies";
+import EnemyScores from "./EnemyScores";
+import { initWebsocket } from "./helpers";
+import { GameEventTypes } from "./types";
 
 interface IProps {
   gameId: string;
@@ -47,6 +48,7 @@ const Game: FC<IProps> = ({ gameId }) => {
         <Enemies />
       </div>
       <Controls websocket={websocket} />
+      <EnemyScores />
     </>
   );
 };

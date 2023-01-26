@@ -2,7 +2,7 @@ import { createHashRouter } from "react-router-dom";
 import GameView from "../components/GameView";
 import IndexView from "../components/IndexView";
 import NewGameView from "../components/NewGameView";
-import LayoutView from "../components/shared/LayoutView";
+import LayoutView from "../components/LayoutView";
 
 const router = createHashRouter([
   {
