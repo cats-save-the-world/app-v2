@@ -22,7 +22,7 @@
 
 .simple::before,
 .light::before,
-.heal::before,
+.healing::before,
 .twisted::before {
   bottom: 30%;
   background-size: 40px;
@@ -46,6 +46,6 @@
   background-size: 70px;
 }
 
-.heal::before {
+.healing::before {
   background-image: url("./assets/green.png");
 }
