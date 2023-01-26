@@ -5,6 +5,7 @@
 ```
 npm i
 npm prepare
+cp .env.example .env
 ```
 
 ## Run
