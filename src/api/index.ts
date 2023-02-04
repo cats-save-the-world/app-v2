@@ -23,3 +23,8 @@ export const verify = async (username: string, password: string) => {
 export const createUser = async (username: string, password: string) => {
   await api.post("/auth/users", { username, password });
 };
+
+export const getGameResults = async (gameId: string) => {
+  const response = await api.get(`/games/${gameId}`);
+  return response.data;
+};
