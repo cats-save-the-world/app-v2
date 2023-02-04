@@ -1,7 +1,7 @@
 import { FC, useEffect } from "react";
 import Button from "./Button";
 import { ControlActionEnum } from "./types";
-import { GameEventTypes } from "../types";
+import { GameEventTypeEnum } from "../types";
 
 interface IProps {
   websocket: WebSocket;
@@ -11,7 +11,7 @@ const Controls: FC<IProps> = ({ websocket }) => {
   const sendWebsocketEvent = (controlAction: ControlActionEnum) => {
     if (websocket.readyState !== WebSocket.OPEN) return;
 
-    const payload = { type: GameEventTypes.CONTROL, payload: controlAction };
+    const payload = { type: GameEventTypeEnum.CONTROL, payload: controlAction };
     websocket.send(JSON.stringify(payload));
   };
 

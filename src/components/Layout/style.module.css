@@ -7,6 +7,8 @@
   left: 0;
   right: 0;
   animation: background-slide 30s linear infinite;
+  display: flex;
+  flex-direction: column;
 }
 
 @keyframes background-slide {
@@ -17,13 +19,4 @@
   to {
     background-position: 2000px;
   }
-}
-
-.wrapper {
-  transform: translate(200px, 500px) scale(3) rotate(-30deg);
-  transition: transform 2s;
-}
-
-.inGame {
-  transform: none;
 }

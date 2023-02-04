@@ -1,6 +1,6 @@
 import { WS_BACKEND_URL } from "../../../config";
 import { ICredentials } from "../../../store/auth/types";
-import { GameEventTypes } from "./types";
+import { GameEventTypeEnum } from "./types";
 
 const initWebsocket = (
   gameId: string,
@@ -13,7 +13,7 @@ const initWebsocket = (
   if (credentials) {
     websocket.onopen = () => {
       websocket.send(
-        JSON.stringify({ type: GameEventTypes.AUTH, payload: credentials })
+        JSON.stringify({ type: GameEventTypeEnum.AUTH, payload: credentials })
       );
     };
   }
