@@ -1,8 +1,8 @@
+import { IEnemy } from "../../../../store/enemies/types";
+import { StateType } from "../../../../store/types";
+import Enemy from "./Enemy";
 import { FC } from "react";
 import { useSelector } from "react-redux";
-import { StateType } from "../../../../store/types";
-import { IEnemy } from "../../../../store/enemies/types";
-import Enemy from "./Enemy";
 
 const Enemies: FC = () => {
   const enemies: IEnemy[] = useSelector(

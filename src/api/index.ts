@@ -1,6 +1,6 @@
-import axios from "axios";
 import { HTTP_BACKEND_URL } from "../config";
 import { ICredentials } from "../store/auth/types";
+import axios from "axios";
 
 const api = axios.create({ baseURL: HTTP_BACKEND_URL });
 

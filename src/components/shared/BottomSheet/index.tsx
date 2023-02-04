@@ -1,5 +1,5 @@
-import { FC, MouseEvent } from "react";
 import { motion } from "framer-motion";
+import { FC, MouseEvent } from "react";
 
 interface IProps {
   children: JSX.Element | JSX.Element[];
