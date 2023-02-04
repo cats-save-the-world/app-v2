@@ -12,6 +12,7 @@ const GameView = () => {
   const gameId = useSelector((state: StateType) => state.game.id);
 
   useEffect(() => {
+    dispatch(setGameId(null));
     createGame(credentials).then((gameId: string) => {
       dispatch(setGameId(gameId));
     });

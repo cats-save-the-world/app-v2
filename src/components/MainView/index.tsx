@@ -26,7 +26,7 @@ const MainView: FC = () => {
         </h1>
         <div className="flex flex-col items-center space-y-4">
           <Button primary onClick={handlePlay}>
-            play
+            play game
           </Button>
           <Button onClick={handleLogout}>log out</Button>
         </div>

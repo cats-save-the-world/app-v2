@@ -8,9 +8,9 @@ const slice = createSlice({
     prevDamage: null,
   },
   reducers: {
-    setPlanet(state: IState, action: PayloadAction<IState>) {
+    setPlanet(state: IState, action: PayloadAction<number>) {
       state.prevDamage = state.damage;
-      state.damage = action.payload.damage;
+      state.damage = action.payload;
     },
   },
 });

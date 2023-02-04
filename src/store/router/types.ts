@@ -5,6 +5,7 @@ export enum ViewEnum {
   AUTH_LOGIN = "authLogin",
   MAIN = "main",
   GAME = "game",
+  GAME_OVER = "gameOver",
 }
 
 export interface IState {

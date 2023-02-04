@@ -6,10 +6,11 @@ import { StateType } from "../../store/types";
 import AuthLoginView from "../AuthLoginView";
 import AuthRegisterView from "../AuthRegisterView";
 import AuthUsernameView from "../AuthUsernameView";
+import GameOverView from "../GameOverView";
+import GameView from "../GameView";
 import LoadingView from "../LoadingView";
 import MainView from "../MainView";
 import style from "./style.module.css";
-import GameView from "../GameView";
 
 const Layout: FC = () => {
   const view = useSelector((state: StateType) => state.router.view);
@@ -21,6 +22,7 @@ const Layout: FC = () => {
   else if (view === ViewEnum.AUTH_LOGIN) viewElement = <AuthLoginView />;
   else if (view === ViewEnum.MAIN) viewElement = <MainView />;
   else if (view === ViewEnum.GAME) viewElement = <GameView />;
+  else if (view === ViewEnum.GAME_OVER) viewElement = <GameOverView />;
 
   return (
     <div className={style.layout}>

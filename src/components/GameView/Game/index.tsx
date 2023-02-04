@@ -3,6 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCat } from "../../../store/cat";
 import { setEnemies } from "../../../store/enemies";
 import { setPlanet } from "../../../store/planet";
+import { setView } from "../../../store/router";
+import { ViewEnum } from "../../../store/router/types";
 import { StateType } from "../../../store/types";
 import Cat from "./Cat";
 import Controls from "./Controls";
@@ -10,11 +12,13 @@ import Enemies from "./Enemies";
 import EnemyScores from "./EnemyScores";
 import Planet from "./Planet";
 import { initWebsocket } from "./helpers";
-import { GameEventTypes } from "./types";
+import { GameEventTypeEnum, IGameEvent } from "./types";
 
 interface IProps {
   gameId: string;
 }
+
+const TIMEOUT = 3000;
 
 const Game: FC<IProps> = ({ gameId }) => {
   const dispatch = useDispatch();
@@ -26,10 +30,17 @@ const Game: FC<IProps> = ({ gameId }) => {
   }, []);
 
   const handleEvent = (event: MessageEvent) => {
-    const { type, payload } = JSON.parse(event.data);
+    const gameEvent: IGameEvent = JSON.parse(event.data);
 
-    if (type !== GameEventTypes.STATE) return;
+    if (gameEvent.type === GameEventTypeEnum.STATE) {
+      handleState(gameEvent.payload);
+    } else if (gameEvent.type === GameEventTypeEnum.GAME_OVER) {
+      setTimeout(handleGameOver, TIMEOUT);
+    }
+  };
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const handleState = (payload: any) => {
     const { cat, planet, enemies } = payload;
     dispatch(
       setCat({
@@ -38,8 +49,12 @@ const Game: FC<IProps> = ({ gameId }) => {
         direction: cat.direction,
       })
     );
-    dispatch(setPlanet(planet));
+    dispatch(setPlanet(planet.damage));
     dispatch(setEnemies(enemies));
+  };
+
+  const handleGameOver = () => {
+    dispatch(setView(ViewEnum.GAME_OVER));
   };
 
   if (!websocket) return null;
