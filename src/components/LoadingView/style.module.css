@@ -1,0 +1,6 @@
+.spinner {
+  background-image: url("./background.gif");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}

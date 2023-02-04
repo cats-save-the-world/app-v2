@@ -1,5 +1,5 @@
-import { FC, ChangeEvent } from "react";
 import classNames from "classnames";
+import { ChangeEvent, FC } from "react";
 
 interface IProps {
   value: string;
@@ -13,9 +13,9 @@ const Input: FC<IProps> = ({ value, type, placeholder, error, onChange }) => {
   return (
     <input
       className={classNames(
-        "text-white text-sm tracking-widest bg-neutral-900/75 rounded-none border-2 border-b-[6px] p-4 focus:outline-none focus:border-yellow-500 placeholder:text-neutral-400",
+        "text-white text-sm tracking-widest bg-neutral-900/75 rounded-none border-2 border-b-[6px] p-4 focus:outline-none placeholder:text-neutral-400",
         {
-          "border-neutral-500": !error,
+          "border-neutral-500 focus:border-yellow-500": !error,
           "border-red-500": error,
         }
       )}
