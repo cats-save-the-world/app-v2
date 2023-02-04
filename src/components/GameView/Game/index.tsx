@@ -1,7 +1,6 @@
-import { FC, useEffect, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { setCat } from "../../../store/cat";
 import { setEnemies } from "../../../store/enemies";
+import { setScore } from "../../../store/game";
 import { setPlanet } from "../../../store/planet";
 import { setView } from "../../../store/router";
 import { ViewEnum } from "../../../store/router/types";
@@ -10,9 +9,12 @@ import Cat from "./Cat";
 import Controls from "./Controls";
 import Enemies from "./Enemies";
 import EnemyScores from "./EnemyScores";
+import Header from "./Header";
 import Planet from "./Planet";
 import { initWebsocket } from "./helpers";
 import { GameEventTypeEnum, IGameEvent } from "./types";
+import { FC, useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 interface IProps {
   gameId: string;
@@ -41,7 +43,7 @@ const Game: FC<IProps> = ({ gameId }) => {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const handleState = (payload: any) => {
-    const { cat, planet, enemies } = payload;
+    const { cat, planet, enemies, score } = payload;
     dispatch(
       setCat({
         angle: cat.angle,
@@ -51,6 +53,7 @@ const Game: FC<IProps> = ({ gameId }) => {
     );
     dispatch(setPlanet(planet.damage));
     dispatch(setEnemies(enemies));
+    dispatch(setScore(score));
   };
 
   const handleGameOver = () => {
@@ -61,6 +64,7 @@ const Game: FC<IProps> = ({ gameId }) => {
 
   return (
     <>
+      <Header />
       <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
         <Enemies />
         <Planet />

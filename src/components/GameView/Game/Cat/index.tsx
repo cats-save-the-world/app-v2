@@ -1,9 +1,9 @@
-import { FC } from "react";
-import classNames from "classnames";
-import style from "./style.module.css";
-import { useSelector } from "react-redux";
-import { StateType } from "../../../../store/types";
 import { CatStatusEnum, CatDirectionEnum } from "../../../../store/cat/types";
+import { StateType } from "../../../../store/types";
+import style from "./style.module.css";
+import classNames from "classnames";
+import { FC } from "react";
+import { useSelector } from "react-redux";
 
 const Cat: FC = () => {
   const { angle, status, direction } = useSelector(

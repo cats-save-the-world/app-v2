@@ -1,5 +1,3 @@
-import { ChangeEvent, FC, FormEvent, useState } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { verify } from "../../api";
 import { setCredentials } from "../../store/auth";
 import { setView } from "../../store/router";
@@ -8,6 +6,8 @@ import { StateType } from "../../store/types";
 import AnimatedView from "../shared/AnimatedView";
 import Button from "../shared/Button";
 import Input from "../shared/Input";
+import { ChangeEvent, FC, FormEvent, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const AuthLoginView: FC = () => {
   const dispatch = useDispatch();

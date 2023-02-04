@@ -1,7 +1,7 @@
-import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { StorageKeysEnum } from "../types";
 import { loadFromStorage, removeFromStorage, saveToStorage } from "../utils";
 import { BottomSheetEnum, ICredentials, IState } from "./types";
+import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 
 const slice = createSlice({
   name: "auth",

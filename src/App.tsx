@@ -1,5 +1,5 @@
-import { FC } from "react";
 import Layout from "./components/Layout";
+import { FC } from "react";
 
 const App: FC = () => <Layout />;
 

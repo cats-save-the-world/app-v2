@@ -1,5 +1,5 @@
-import { FC, useEffect, useState } from "react";
 import Circle from "./Circle";
+import { FC, useEffect, useState } from "react";
 
 interface IProps {
   value: number;

@@ -1,6 +1,6 @@
-import { FC } from "react";
-import classNames from "classnames";
 import style from "./style.module.css";
+import classNames from "classnames";
+import { FC } from "react";
 
 interface IProps {
   onTouchStart: () => void;

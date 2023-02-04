@@ -1,8 +1,8 @@
+import { IEnemyScore } from "../../../../store/enemyScores/types";
+import { StateType } from "../../../../store/types";
+import EnemyScore from "./EnemyScore";
 import { FC } from "react";
 import { useSelector } from "react-redux";
-import { StateType } from "../../../../store/types";
-import { IEnemyScore } from "../../../../store/enemyScores/types";
-import EnemyScore from "./EnemyScore";
 
 const EnemyScores: FC = () => {
   const enemyScores = useSelector(

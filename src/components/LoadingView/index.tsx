@@ -1,14 +1,14 @@
-import classNames from "classnames";
-import { FC, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
 import { verify } from "../../api";
 import { logout } from "../../store/auth";
 import { setView } from "../../store/router";
 import { ViewEnum } from "../../store/router/types";
 import { StateType } from "../../store/types";
+import { sleep } from "../../utils";
 import AnimatedView from "../shared/AnimatedView";
 import style from "./style.module.css";
-import { sleep } from "../../utils";
+import classNames from "classnames";
+import { FC, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 
 const LoadingView: FC = () => {
   const dispatch = useDispatch();
