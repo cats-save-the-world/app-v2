@@ -4,9 +4,11 @@ import { setCat } from "../../../store/cat";
 import { setEnemies } from "../../../store/enemies";
 import { setPlanet } from "../../../store/planet";
 import { StateType } from "../../../store/types";
+import Cat from "./Cat";
 import Controls from "./Controls";
 import Enemies from "./Enemies";
 import EnemyScores from "./EnemyScores";
+import Planet from "./Planet";
 import { initWebsocket } from "./helpers";
 import { GameEventTypes } from "./types";
 
@@ -46,6 +48,8 @@ const Game: FC<IProps> = ({ gameId }) => {
     <>
       <div className="absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2">
         <Enemies />
+        <Planet />
+        <Cat />
       </div>
       <Controls websocket={websocket} />
       <EnemyScores />
