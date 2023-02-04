@@ -1,9 +1,9 @@
-import { FC } from "react";
-import { isMobile } from "react-device-detect";
-import MobileControls from "./MobileControls";
-import { ControlActionEnum } from "./types";
 import { GameEventTypeEnum } from "../types";
 import DesktopControls from "./DesktopControls";
+import MobileControls from "./MobileControls";
+import { ControlActionEnum } from "./types";
+import { FC } from "react";
+import { isMobile } from "react-device-detect";
 
 interface IProps {
   websocket: WebSocket;

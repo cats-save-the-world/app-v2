@@ -1,6 +1,3 @@
-import { AnimatePresence } from "framer-motion";
-import { FC } from "react";
-import { useSelector } from "react-redux";
 import { ViewEnum } from "../../store/router/types";
 import { StateType } from "../../store/types";
 import AuthLoginView from "../AuthLoginView";
@@ -11,6 +8,9 @@ import GameView from "../GameView";
 import LoadingView from "../LoadingView";
 import MainView from "../MainView";
 import style from "./style.module.css";
+import { AnimatePresence } from "framer-motion";
+import { FC } from "react";
+import { useSelector } from "react-redux";
 
 const Layout: FC = () => {
   const view = useSelector((state: StateType) => state.router.view);

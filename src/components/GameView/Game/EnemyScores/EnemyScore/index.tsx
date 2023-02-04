@@ -1,7 +1,7 @@
-import { FC, useEffect, useState } from "react";
-import { animate } from "framer-motion";
-import { useDispatch } from "react-redux";
 import { removeEnemyScore } from "../../../../../store/enemyScores";
+import { animate } from "framer-motion";
+import { FC, useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
 interface IProps {
   id: string;

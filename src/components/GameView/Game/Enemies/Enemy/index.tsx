@@ -1,8 +1,8 @@
-import { FC, useEffect, useRef } from "react";
-import classNames from "classnames";
-import style from "./style.module.css";
-import { useDispatch } from "react-redux";
 import { addEnemyScore } from "../../../../../store/enemyScores";
+import style from "./style.module.css";
+import classNames from "classnames";
+import { FC, useEffect, useRef } from "react";
+import { useDispatch } from "react-redux";
 
 interface IProps {
   id: string;

@@ -1,8 +1,8 @@
-import { FC, useEffect } from "react";
-import { useDispatch } from "react-redux";
 import { setView } from "../../store/router";
 import { ViewEnum } from "../../store/router/types";
 import AnimatedView from "../shared/AnimatedView";
+import { FC, useEffect } from "react";
+import { useDispatch } from "react-redux";
 
 const TIMEOUT = 3000;
 

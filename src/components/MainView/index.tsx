@@ -1,10 +1,10 @@
-import { FC } from "react";
-import { useDispatch } from "react-redux";
 import { logout } from "../../store/auth";
 import { setView } from "../../store/router";
 import { ViewEnum } from "../../store/router/types";
 import AnimatedView from "../shared/AnimatedView";
 import Button from "../shared/Button";
+import { FC } from "react";
+import { useDispatch } from "react-redux";
 
 const MainView: FC = () => {
   const dispatch = useDispatch();
