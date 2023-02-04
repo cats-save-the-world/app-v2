@@ -1,7 +1,7 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
-import { IState, BottomSheetEnum, ICredentials } from "./types";
-import { loadFromStorage, saveToStorage, removeFromStorage } from "../utils";
 import { StorageKeysEnum } from "../types";
+import { loadFromStorage, removeFromStorage, saveToStorage } from "../utils";
+import { BottomSheetEnum, ICredentials, IState } from "./types";
 
 const slice = createSlice({
   name: "auth",
@@ -25,6 +25,7 @@ const slice = createSlice({
       state.username = action.payload;
     },
     setCredentials(state: IState, action: PayloadAction<ICredentials | null>) {
+      state.username = "";
       state.credentials = action.payload;
 
       if (action.payload) {
@@ -33,8 +34,14 @@ const slice = createSlice({
         removeFromStorage(StorageKeysEnum.CREDENTIALS);
       }
     },
+    logout(state: IState) {
+      state.username = "";
+      state.credentials = null;
+      removeFromStorage(StorageKeysEnum.CREDENTIALS);
+    },
   },
 });
 
-export const { setBottomSheet, setUsername, setCredentials } = slice.actions;
+export const { setBottomSheet, setUsername, setCredentials, logout } =
+  slice.actions;
 export default slice.reducer;

@@ -4,6 +4,8 @@ import cat from "./cat";
 import enemies from "./enemies";
 import planet from "./planet";
 import enemyScores from "./enemyScores";
+import game from "./game";
+import router from "./router";
 
 const store = configureStore({
   reducer: {
@@ -12,6 +14,8 @@ const store = configureStore({
     enemies,
     planet,
     enemyScores,
+    game,
+    router,
   },
 });
 
