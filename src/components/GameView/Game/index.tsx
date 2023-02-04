@@ -20,7 +20,7 @@ interface IProps {
   gameId: string;
 }
 
-const TIMEOUT = 3000;
+const TIMEOUT = 1000;
 
 const Game: FC<IProps> = ({ gameId }) => {
   const dispatch = useDispatch();
