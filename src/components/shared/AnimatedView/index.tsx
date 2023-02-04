@@ -2,7 +2,7 @@ import { motion } from "framer-motion";
 import { FC } from "react";
 
 interface IProps {
-  children: JSX.Element | boolean;
+  children: JSX.Element[] | JSX.Element | boolean;
   className: string;
 }
 
