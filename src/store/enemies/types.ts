@@ -1,8 +1,16 @@
+export enum EnemyTypeEnum {
+  SIMPLE = "simple",
+  HEAVY = "heavy",
+  LIGHT = "light",
+  TWISTED = "twisted",
+  HEALING = "healing",
+}
+
 export interface IEnemy {
   id: string;
   angle: number;
   distance: number;
-  type: "simple" | "heavy" | "light" | "twisted" | "healing";
+  type: EnemyTypeEnum;
   score: number;
   alive: boolean;
 }

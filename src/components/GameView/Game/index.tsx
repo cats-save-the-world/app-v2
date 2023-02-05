@@ -8,8 +8,8 @@ import { StateType } from "../../../store/types";
 import Cat from "./Cat";
 import Controls from "./Controls";
 import Enemies from "./Enemies";
-import EnemyScores from "./EnemyScores";
 import Header from "./Header";
+import Indicators from "./Indicators";
 import Planet from "./Planet";
 import { initWebsocket } from "./helpers";
 import { GameEventTypeEnum, IGameEvent } from "./types";
@@ -71,7 +71,7 @@ const Game: FC<IProps> = ({ gameId }) => {
         <Cat />
       </div>
       <Controls websocket={websocket} />
-      <EnemyScores />
+      <Indicators />
     </>
   );
 };
