@@ -1,4 +1,4 @@
-import { addEnemyScore } from "../../../../../store/enemyScores";
+import { addIndicator } from "../../../../../store/indicators";
 import style from "./style.module.css";
 import classNames from "classnames";
 import { FC, useEffect, useRef } from "react";
@@ -21,7 +21,7 @@ const Enemy: FC<IProps> = ({ id, angle, distance, type, score, alive }) => {
     if (!alive && ref.current) {
       const coordinates = ref.current.getBoundingClientRect();
       dispatch(
-        addEnemyScore({ id, score, x: coordinates.x, y: coordinates.y })
+        addIndicator({ id, label: score, x: coordinates.x, y: coordinates.y })
       );
     }
   }, [alive]);

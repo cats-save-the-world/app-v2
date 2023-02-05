@@ -1,8 +1,8 @@
 import auth from "./auth";
 import cat from "./cat";
 import enemies from "./enemies";
-import enemyScores from "./enemyScores";
 import game from "./game";
+import indicators from "./indicators";
 import planet from "./planet";
 import router from "./router";
 import { configureStore } from "@reduxjs/toolkit";
@@ -13,7 +13,7 @@ const store = configureStore({
     cat,
     enemies,
     planet,
-    enemyScores,
+    indicators,
     game,
     router,
   },

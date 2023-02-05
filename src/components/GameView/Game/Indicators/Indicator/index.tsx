@@ -1,16 +1,16 @@
-import { removeEnemyScore } from "../../../../../store/enemyScores";
+import { removeIndicator } from "../../../../../store/indicators";
 import { animate } from "framer-motion";
 import { FC, useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 
 interface IProps {
   id: string;
-  score: number;
+  label: number;
   x: number;
   y: number;
 }
 
-const EnemyScore: FC<IProps> = ({ id, score, x, y }) => {
+const Indicator: FC<IProps> = ({ id, label, x, y }) => {
   const dispatch = useDispatch();
   const [offset, setOffset] = useState<number>(0);
 
@@ -22,7 +22,7 @@ const EnemyScore: FC<IProps> = ({ id, score, x, y }) => {
         setOffset(Math.trunc(latest));
       },
       onComplete() {
-        dispatch(removeEnemyScore(id));
+        dispatch(removeIndicator(id));
       },
     });
   }, []);
@@ -35,9 +35,9 @@ const EnemyScore: FC<IProps> = ({ id, score, x, y }) => {
         left: `${x}px`,
       }}
     >
-      {score}
+      {label}
     </div>
   );
 };
 
-export default EnemyScore;
+export default Indicator;
