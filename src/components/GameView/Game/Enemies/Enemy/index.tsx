@@ -1,3 +1,4 @@
+import { EnemyTypeEnum } from "../../../../../store/enemies/types";
 import { addIndicator } from "../../../../../store/indicators";
 import style from "./style.module.css";
 import classNames from "classnames";
@@ -18,7 +19,7 @@ const Enemy: FC<IProps> = ({ id, angle, distance, type, score, alive }) => {
   const ref = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!alive && ref.current) {
+    if (!alive && ref.current && type !== EnemyTypeEnum.HEALING) {
       const coordinates = ref.current.getBoundingClientRect();
       dispatch(
         addIndicator({ id, label: score, x: coordinates.x, y: coordinates.y })
