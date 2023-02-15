@@ -4,17 +4,67 @@
   background-size: 40px;
   background-position: center 70%;
   background-repeat: no-repeat;
-  background-image: url("./assets/idle.gif");
-}
-
-.running {
-  background-image: url("./assets/running.gif");
-}
-
-.hitting {
-  background-image: url("./assets/hitting.gif");
 }
 
 .left {
   transform: scale(-1, 1);
+}
+
+.boots {
+  background-image: url("./assets/boots/idle.gif");
+}
+
+.boots.running {
+  background-image: url("./assets/boots/running.gif");
+}
+
+.boots.hitting {
+  background-image: url("./assets/boots/hitting.gif");
+}
+
+.bella {
+  background-image: url("./assets/bella/idle.gif");
+}
+
+.bella.running {
+  background-image: url("./assets/bella/running.gif");
+}
+.bella.hitting {
+  background-image: url("./assets/bella/hitting.gif");
+}
+
+.tiger {
+  background-image: url("./assets/tiger/idle.gif");
+}
+
+.tiger.running {
+  background-image: url("./assets/tiger/running.gif");
+}
+
+.tiger.hitting {
+  background-image: url("./assets/tiger/hitting.gif");
+}
+
+.luna {
+  background-image: url("./assets/luna/idle.gif");
+}
+
+.luna.running {
+  background-image: url("./assets/luna/running.gif");
+}
+
+.luna.hitting {
+  background-image: url("./assets/luna/hitting.gif");
+}
+
+.shadow {
+  background-image: url("./assets/shadow/idle.gif");
+}
+
+.shadow.running {
+  background-image: url("./assets/shadow/running.gif");
+}
+
+.shadow.hitting {
+  background-image: url("./assets/shadow/hitting.gif");
 }
