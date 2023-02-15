@@ -1,4 +1,5 @@
 import { createGame } from "../../api";
+import { setCatSkin } from "../../store/cat";
 import { resetEnemies } from "../../store/enemies";
 import { resetGame, setGameId } from "../../store/game";
 import { StateType } from "../../store/types";
@@ -15,8 +16,9 @@ const GameView = () => {
   useEffect(() => {
     dispatch(resetGame());
     dispatch(resetEnemies());
-    createGame(credentials).then((gameId: string) => {
+    createGame(credentials).then(({ game_id: gameId, skins }) => {
       dispatch(setGameId(gameId));
+      dispatch(setCatSkin(skins.cat));
     });
   }, []);
 

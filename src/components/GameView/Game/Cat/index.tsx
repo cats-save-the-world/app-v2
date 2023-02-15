@@ -6,7 +6,7 @@ import { FC } from "react";
 import { useSelector } from "react-redux";
 
 const Cat: FC = () => {
-  const { angle, status, direction } = useSelector(
+  const { angle, status, direction, skin } = useSelector(
     (state: StateType) => state.cat
   );
 
@@ -19,7 +19,7 @@ const Cat: FC = () => {
         }}
       >
         <div
-          className={classNames(style.cat, {
+          className={classNames(style.cat, style[skin], {
             [style.running]: status === CatStatusEnum.RUNNING,
             [style.hitting]: status === CatStatusEnum.HITTING,
             [style.left]: direction === CatDirectionEnum.LEFT,

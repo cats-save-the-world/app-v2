@@ -9,7 +9,16 @@ export enum CatDirectionEnum {
   RIGHT = "right",
 }
 
+export enum CatSkinEnum {
+  BOOTS = "boots",
+  BELLA = "bella",
+  TIGER = "tiger",
+  LUNA = "luna",
+  SHADOW = "shadow",
+}
+
 export interface IState {
+  skin: CatSkinEnum | null;
   angle: number;
   status: CatStatusEnum;
   direction: CatDirectionEnum;
